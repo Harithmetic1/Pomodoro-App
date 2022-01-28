@@ -5,10 +5,38 @@ import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 
+// Chakra UI
+import { extendTheme, ChakraProvider } from '@chakra-ui/react';
+
+const colors = {
+  brand: {
+    900: '#1F1B2E',
+    800: '#664EFF',
+    700: '#6C4EB3'
+  },
+  styles: {
+    global: {
+      'html, body': {
+        fontFamily: 'Maven Pro, sans-serif'
+      }
+    }
+  },
+  variants: {
+    'with-shadow': {
+      bg: 'red.400',
+      boxShadow: '0 0 2px 2px #6C4EB3',
+    }
+  }
+}
+
+const theme = extendTheme({ colors })
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <ChakraProvider theme={theme}>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </ChakraProvider>,
   document.getElementById('root')
 );
 

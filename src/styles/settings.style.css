@@ -1,0 +1,7 @@
+.select-tag{
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+    padding: 10px;
+    background-color: #3d3c44;
+}
