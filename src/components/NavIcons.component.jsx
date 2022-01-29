@@ -3,8 +3,11 @@ import { Link } from "react-router-dom";
 
 
 import { Box, Stack } from "@chakra-ui/react";
-import { GiSettingsKnobs } from 'react-icons/gi'
-import { IoTimeOutline } from 'react-icons/io5'
+
+// Font Awesome
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSlidersH } from '@fortawesome/free-solid-svg-icons'
+import { faClock } from '@fortawesome/free-regular-svg-icons'
 
 const NavIcons = () => {
     return(
@@ -12,12 +15,12 @@ const NavIcons = () => {
                 <Stack m={'auto'} direction={['row', 'column' ]} spacing={'24px'} color={'white'} fontSize={'30px'}>
                     <Box>
                         <Link to={'/'}>
-                            <IoTimeOutline />
+                            <FontAwesomeIcon icon={faClock} />
                         </Link>
                     </Box>
                     <Box>
                         <Link to={'/settings'}>
-                            <GiSettingsKnobs />
+                            <FontAwesomeIcon icon={faSlidersH} transform={{ rotate: 90 }}/>
                         </Link>
                     </Box>
                 </Stack>

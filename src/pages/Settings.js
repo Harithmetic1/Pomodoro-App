@@ -3,7 +3,9 @@ import React from "react";
 import Dropdown from "../components/Dropdown.component";
 import NavIcons from "../components/NavIcons.component";
 
-import { IoChevronBackOutline } from 'react-icons/io5'
+// Font Awesome
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 
 import '../styles/settings.style.css';
 import { Link } from "react-router-dom";
@@ -16,7 +18,7 @@ const Settings = () => {
                 <Box position={'absolute'} top={'15px'} left={'20px'}>
                     <Button colorScheme={'purple'} variant={'outline'}>
                         <Link to={'/'}>
-                            <IoChevronBackOutline />
+                            <FontAwesomeIcon icon={faChevronLeft} />
                         </Link>
                     </Button>
                 </Box>
