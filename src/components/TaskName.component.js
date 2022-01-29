@@ -1,7 +1,8 @@
 import { Box, Input } from "@chakra-ui/react";
 import React from "react";
 
-import { FiEdit2 } from "react-icons/fi";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPen } from "@fortawesome/free-solid-svg-icons";
 
 const TaskName = () => {
     return(
@@ -10,7 +11,7 @@ const TaskName = () => {
                 <Box display={'flex'} justifyContent={'space-between'} alignItems={'center'} w={'100%'} borderRadius={'30px'} bgColor={'#6c4eb3'}>
                     <Input p={'10px'} color={'white'} m={'auto'} variant={'unstyled'} placeholder={'Task: Write an article'}/>
                     <Box w={'20%'} color={'white'}>
-                        <FiEdit2 />
+                        <FontAwesomeIcon icon={faPen} />
                     </Box>
                 </Box>
             </Box>

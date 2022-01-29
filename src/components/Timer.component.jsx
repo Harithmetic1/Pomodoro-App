@@ -3,7 +3,8 @@ import React, { useState, useEffect } from "react";
 
 import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 
-import { FaPlay, FaPause } from "react-icons/fa"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlay, faPause } from "@fortawesome/free-solid-svg-icons";
 
 const Timer = () => {
     
@@ -64,7 +65,7 @@ const Timer = () => {
 
         <Box width={'50px'} h={'50px'} borderRadius={'50%'} variant={'with-shadow'} backgroundColor={'brand.800'} textAlign={'center'} display={'flex'} alignItems={'center'} justifyContent={'center'}>
             <Box >
-                {!play ? <Box w={'100%'} h={'100%'} display={'flex'} justifyContent={'center'} alignItems={'center'} onClick={() => setPlay(!play)}><FaPlay /></Box> : <Box w={'100%'} h={'100%'} display={'flex'} justifyContent={'center'} alignItems={'center'} onClick={() => setPlay(!play)}><FaPause /></Box>}
+                {!play ? <Box w={'100%'} h={'100%'} display={'flex'} justifyContent={'center'} alignItems={'center'} onClick={() => setPlay(!play)}><FontAwesomeIcon icon={faPlay} /></Box> : <Box w={'100%'} h={'100%'} display={'flex'} justifyContent={'center'} alignItems={'center'} onClick={() => setPlay(!play)}><FontAwesomeIcon icon={faPause} /></Box>}
             </Box>
         </Box>
     </Box>
