@@ -1,7 +1,6 @@
-import { Box, Button, Stack, Text } from "@chakra-ui/react";
+import { Box, Button, Text } from "@chakra-ui/react";
 import React from "react";
-import Dropdown from "../components/Dropdown.component";
-import NavIcons from "../components/NavIcons.component";
+// import NavIcons from "../components/NavIcons.component";
 
 // Font Awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,6 +8,7 @@ import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 
 import '../styles/settings.style.css';
 import { Link } from "react-router-dom";
+import SettingsContainer from "../components/SettingsContainer.component";
 
 const Settings = () => {
     return(
@@ -28,22 +28,9 @@ const Settings = () => {
                     </Text>
                 </Box>
             </Box>
-            <Box display={'flex'} flexDir={'column'} h={'570px'} justifyContent={'center'} alignItems={'center'} gap={'40px'} m={'auto'}>
-                <Box display={'flex'} flexDir={'column'} gap={'10px'}>
-                    <Dropdown />
-                    <Dropdown />
-                    <Dropdown />
-                    <Dropdown />
-                </Box>
-                <Box display={'flex'} justifyContent={'center'} alignItems={'center'}>
-                    <Stack direction={'row'} spacing={4} align={'center'}>
-                        <Button colorScheme={'purple'} variant={'outline'}>Cancel</Button>
-                        <Button colorScheme={'purple'} variant={'solid'}>Save</Button>
-                    </Stack>
-                </Box>
-            </Box>  
+            <SettingsContainer />  
             
-            <NavIcons />    
+            {/* <NavIcons />     */}
             </Box>
         </>
     )

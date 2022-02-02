@@ -38,9 +38,9 @@ const Timer = () => {
     justifyContent={'center'}
     alignItems={'center'} 
     m={'auto'} 
-    h={'500px'} 
+    h={'350px'} 
     flexDir={'column'}
-    gap={'50px'}
+    gap={'30px'}
     color={'white'}>
         <CountdownCircleTimer
         isPlaying={play}
