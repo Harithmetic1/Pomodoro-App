@@ -17,19 +17,23 @@ import { PomodoroContext } from "../Contexts/PomodoroContexts";
 
 const TaskList = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
-    const { taskTitle } = useContext(PomodoroContext)
+    const { taskArray, taskID, setTaskID } = useContext(PomodoroContext)
 
-    console.log(taskTitle)
+    // console.log(taskArray)
     return(
         <>
             <Box position={'relative'} display={'flex'} flexDir={'column'} gap={'15px'} justifyContent={'center'} alignItems={'center'}>
                 <Box color={'white'} display={'flex'} justifyContent={'space-between'} alignItems={'center'} width={'300px'} borderBottom={'1px'} borderColor={'brand.800'} borderStyle={'solid'} p={'10px'} textAlign={'center'}>
                     Tasks
-                    <Button variant={'unstyled'} onClick={onOpen}>
-                        <FontAwesomeIcon icon={faPlusCircle} />
+                    <Button variant={'unstyled'} onClick={onOpen} >
+                        <FontAwesomeIcon icon={faPlusCircle} onClick={() => setTaskID(taskID + 1)} />
                     </Button>
                 </Box>
-                <TaskContainer />
+                {
+                    taskArray.map((task) => (
+                        <TaskContainer name={task[0].name} key={task[0].id} />
+                        ))
+                }
             </Box>
 
             <Modal isOpen={isOpen} size={'xs'} onClose={onClose}>

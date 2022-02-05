@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Text, Select } from "@chakra-ui/react";
 
-const Dropdown = ({ name }) => {
+const IntervalDropdown = ({ name }) => {
     const dropdownValues = () => {
         let numbArray = []
         for(let i = 0; i <= 60; i += 5){
@@ -28,4 +28,4 @@ const Dropdown = ({ name }) => {
 }
 
 
-export default Dropdown;
+export default IntervalDropdown;
