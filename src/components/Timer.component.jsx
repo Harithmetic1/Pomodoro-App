@@ -6,11 +6,15 @@ import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay, faPause } from "@fortawesome/free-solid-svg-icons";
 
+import { TimerSettings } from "../Contexts/PomodoroContexts";
+
 const Timer = () => {
     
     const [minute, setMinutes] = useState(3)
     const [second, setSeconds] = useState(0)
     const [play, setPlay] = useState(true)
+
+    const { focusTime } = TimerSettings()
 
     // const minuteTimer = minute < 10 ? `0${minute}` : minute;
     // const secondTimer = second < 10 ? `0${second}` : second;
@@ -44,7 +48,7 @@ const Timer = () => {
     color={'white'}>
         <CountdownCircleTimer
         isPlaying={play}
-        duration={1 * 60}
+        duration={focusTime * 60}
         colors={['#664EFF', '#F7B801', '#A30000', '#A30000']}
         colorsTime={[7, 5, 2, 0]}
         onComplete={() => {

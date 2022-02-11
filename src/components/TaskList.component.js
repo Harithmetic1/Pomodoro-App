@@ -10,7 +10,7 @@ import { Box, Button, Modal,
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import TaskContainer from "./TaskContainer.component";
-import SettingsContainer from "./SettingsContainer.component";
+// import SettingsContainer from "./SettingsContainer.component";
 import TaskName from "./TaskName.component";
 import { PomodoroContext } from "../Contexts/PomodoroContexts";
 
@@ -43,7 +43,6 @@ const TaskList = () => {
                 <ModalCloseButton />
                 <ModalBody height={'400px'}>
                     <TaskName />
-                    <SettingsContainer />
                 </ModalBody>
                 </ModalContent>
             </Modal>

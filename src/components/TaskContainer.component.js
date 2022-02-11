@@ -5,7 +5,7 @@ import { Box, Text } from "@chakra-ui/react";
 const TaskContainer = ({ name }) => {
     return(
         <Box>
-            <Box width={'300px'}  color={'white'}>
+            <Box width={'300px'} marginBottom={'5px'} color={'white'}>
                 <Box display={'flex'} 
                 _active={{
                     transform: 'scale(1.1)'
