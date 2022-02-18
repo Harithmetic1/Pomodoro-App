@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+import React from "react";
 
-import { Box, Stack, Button } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 
 import Dropdown from "./Dropdown.component";
 
