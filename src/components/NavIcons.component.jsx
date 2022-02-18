@@ -26,7 +26,7 @@ const NavIcons = () => {
 
     return(
         <>
-        <Box  position={['relative', 'absolute']} top={['0px', '20px']} right={'10px'} w={['','30px']} h={'95%'}>
+        <Box  position={['relative', 'absolute']} top={['0px', '5px']} right={'10px'} w={['','30px']} h={'95%'}>
                 <Stack m={'auto'} direction={['row', 'column' ]} spacing={'24px'} color={'white'} fontSize={'30px'}>
                     <Box>
                         {/* <Link to={'/'}>

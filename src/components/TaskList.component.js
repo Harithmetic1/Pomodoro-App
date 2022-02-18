@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Box, Button, Modal,
+import { Box, Button, Modal, Stack,
     ModalOverlay,
     ModalContent,
     ModalHeader,
@@ -17,7 +17,14 @@ import { PomodoroContext } from "../Contexts/PomodoroContexts";
 
 const TaskList = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
-    const { taskArray, taskID, setTaskID } = useContext(PomodoroContext)
+    const { taskArray, taskID, setTaskID, setTaskArray, taskTitle } = useContext(PomodoroContext)
+
+    const newTask = [
+        {
+            id: taskID,
+            name: taskTitle
+        }
+    ]
 
     // console.log(taskArray)
     return(
@@ -43,6 +50,12 @@ const TaskList = () => {
                 <ModalCloseButton />
                 <ModalBody height={'400px'}>
                     <TaskName />
+                    <Box display={'flex'} justifyContent={'center'} alignItems={'center'}>
+                    <Stack direction={'row'} spacing={4} align={'center'} p={'5px'}>
+                        <Button colorScheme={'purple'} variant={'outline'}>Cancel</Button>
+                        <Button colorScheme={'purple'} variant={'solid'} onClick={() => setTaskArray([...taskArray, newTask])}>Save</Button>
+                    </Stack>
+                </Box>
                 </ModalBody>
                 </ModalContent>
             </Modal>

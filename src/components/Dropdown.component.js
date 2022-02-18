@@ -1,20 +1,22 @@
-import React from "react";
-import { Box, Text, Select } from "@chakra-ui/react";
+import React, { useState, useEffect } from "react";
+import { Box, Text, Input } from "@chakra-ui/react";
 import { TimerSettings } from "../Contexts/PomodoroContexts";
 
 const Dropdown = ({ name }) => {
 
-    const { setFocusTime, setShortBreak, setLongBreak }  = TimerSettings()
+    const { focusTime, setFocusTime, shortBreak, setShortBreak, longBreak, setLongBreak }  = TimerSettings()
+    const [ dropdownPlaceHolder, setDropdownPlaceHolder ] = useState(0)
     console.log(setFocusTime);
 
-    const dropdownValues = () => {
-        let numbArray = []
-        for(let i = 0; i <= 60; i += 5){
-            numbArray.push(i)
+    useEffect(() => {
+        if (name.toLowerCase() === "focus time"){
+            setDropdownPlaceHolder(focusTime)
+        } else if (name.toLowerCase() === "short break"){
+            setDropdownPlaceHolder(shortBreak)
+        } else if (name.toLowerCase() === "long break"){
+            setDropdownPlaceHolder(longBreak)
         }
-        return numbArray
-    }
-    let optionsArray = dropdownValues()
+    }, [focusTime, longBreak, name, shortBreak])
 
     const UpdateTimerSettings = (e) =>{
         if (name.toLowerCase() === "focus time"){
@@ -27,18 +29,12 @@ const Dropdown = ({ name }) => {
     } 
 
     return(
-        <Box display={'flex'} color={'white'} justifyContent={'space-between'} w={'250px'} p={'10px'} bgColor={'#2D2C3F'} borderRadius={'20px'}>
+        <Box display={'flex'} color={'white'} justifyContent={'space-between'} alignItems={'center'} w={'250px'} p={'10px'} bgColor={'#2D2C3F'} borderRadius={'20px'}>
                 <Text>{name}: </Text>
-                <Select variant={'unstyled'} color={'brand.700'} w={'100px'} onChange={(e) => UpdateTimerSettings(e)}>
-                {
-                    optionsArray.map((option) => {
-                        return (
-                        <option key={option} value={option} >{option} mins</option>
-                    )
-                    }
-                    )
-                }
-                </Select>
+                <Box w={'50px'} >
+                    <Input variant={'flushed'} type={'number'} textAlign={'center'} onChange={ (e) => UpdateTimerSettings(e)} placeholder={dropdownPlaceHolder} />
+                </Box>
+
             </Box>
     )
 }
